@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './components/todo/todo.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     NgbModule,
     FormsModule,
     SweetAlert2Module.forRoot(),
+    FilterPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,11 @@ import { ITask } from "../../Interfaces/ITask";
 })
 export class TodoComponent implements OnInit {
 
+  public search:string;
+
+  public taskTitle: string;
+  public taskDueDate: Date;
+
   public firstName: string= "George";
   public lastName: string="Pagonoudis";
   public numbers: number[] =[1,2,3,4,5,6,7];
@@ -73,11 +78,27 @@ export class TodoComponent implements OnInit {
   }
 
   public removeTask(_id:string){
-    const thesi =this.todos.find(i=>i._id===_id);
+    const thesi = this.todos.findIndex(i=>i._id===_id);
     this.todos.splice(thesi, 1);
   }
   public completeTask(task:ITask){
 
     task.completed =true;
   }
+  public addTask() {
+      let task={
+        _id : this.todos.length + 1 + "",
+        title: this.taskTitle,
+        dueDate: this.taskDueDate,
+        completed:false
+      };
+      this.todos.push(task);
+      console.log(task);
+      
+      
+  
+
+
+  }
+  
 }
